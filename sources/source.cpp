@@ -13,8 +13,10 @@ Json::Json(const std::string &s) {
     if (s[i] == '{') {
         i++;
         while (s[i] != '}') {
-            while (s[i] != '"') //{
+            while (s[i] != '"'){ //{
                 i++;
+                if (s[i]== '}') return;
+            }
             if (s[i] == '"') {//  Первая кавычка
                 i++;
                 std::string buf = "";
@@ -125,7 +127,7 @@ Json::Json(const std::string &s) {
     } else if (s[i] == '[') {
         i++;
         while (1) {
-            while (s[i] == ' ' || s[i] == '\n')
+            while (s[i] == ' ' || s[i] == '\n' || s[i]=='\t')
                 i++;
             std::any val;
             bool zn = 0;
@@ -212,7 +214,7 @@ Json::Json(const std::string &s) {
             }
             v1.push_back(val);
             //////
-            if (s[i] == ',') {
+            if (s[i] == ',' || s[i]=='\n') {
                 i++;
                 continue;
             } else if (s[i] == ']') {
@@ -222,7 +224,6 @@ Json::Json(const std::string &s) {
                 throw std::invalid_argument("Wrong word!");
             }
         }
-        //m1.insert(std::make_pair(key, value));
     } else {
         throw std::invalid_argument("Error!!!");
     }

@@ -252,9 +252,9 @@ std::any & Json::operator[](int index) {
     else
         throw std::logic_error("Not Array!");
 }
-Json::Json parse(const std::string &s) { return Json(s);}
+Json Json::parse(const std::string &s) { return Json(s);}
 
-Json::Json parseFile(const std::string &path_to_file) {
+Json Json::parseFile(const std::string &path_to_file) {
     std::ifstream f(path_to_file);
     std::string st1;
     if (!f) {

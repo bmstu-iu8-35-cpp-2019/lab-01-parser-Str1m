@@ -66,7 +66,6 @@ Json::Json(const std::string &s) {
                 value = Json(s.substr(i, ch));
                 i += ch;
             }
-            //}
             else if (s[i] >= '0' && s[i] <= '9') {
                 bool zn = 0;
                 int i1 = 0;
@@ -251,10 +250,9 @@ std::any & Json::operator[](int index) {
     if (is_array()) return v1[index];
     else
         throw std::logic_error("Not Array!");
-    
 }
 
-static Json::Json parse(const std::string &s) { return Json(s); }
+static Json::Json parse(const std::string &s) { return Json(s);}
 
 static Json::Json parseFile(const std::string &path_to_file) {
     std::ifstream f(path_to_file);
@@ -268,5 +266,4 @@ static Json::Json parseFile(const std::string &path_to_file) {
     }
     f.close();
     return Json(st1);
-    
 }

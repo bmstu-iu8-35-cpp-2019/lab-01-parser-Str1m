@@ -2,6 +2,7 @@
 
 #include <header.hpp>
 
+
 Json::Json(const std::string &s) {
     size_t i = 0;
     std::string key;
@@ -27,7 +28,7 @@ Json::Json(const std::string &s) {
             while (s[i] != ':')
                 i++;
             i++;
-            while ((s[i] == ' ') || (s[i] == '/n '))// || (s[i] != '{')) //{
+            while ((s[i] == ' ') || (s[i] == '\n'))
                 i++;
             if (s[i] == '"') {//  Первая кавычка
                 i++;
@@ -123,7 +124,7 @@ Json::Json(const std::string &s) {
     } else if (s[i] == '[') {
         i++;
         while (1) {
-            while (s[i] == ' ' || s[i] == '/n')
+            while (s[i] == ' ' || s[i] == '\n')
                 i++;
             std::any val;
             bool zn = 0;
@@ -250,10 +251,9 @@ std::any & Json::operator[](int index) {
     else
         throw std::logic_error("Not Array!");
 }
+Json::Json parse(const std::string &s) { return Json(s);}
 
-static Json::Json parse(const std::string &s) { return Json(s);}
-
-static Json::Json parseFile(const std::string &path_to_file) {
+Json::Json parseFile(const std::string &path_to_file) {
     std::ifstream f(path_to_file);
     std::string st1;
     if (!f) {

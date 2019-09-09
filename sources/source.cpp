@@ -65,8 +65,7 @@ Json::Json(const std::string &s) {
                 }
                 value = Json(s.substr(i, ch));
                 i += ch;
-            }
-            else if (s[i] >= '0' && s[i] <= '9') {
+            } else if (s[i] >= '0' && s[i] <= '9') {
                 bool zn = 0;
                 int i1 = 0;
                 double d1 = 0;

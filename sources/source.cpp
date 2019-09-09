@@ -2,6 +2,7 @@
 
 #include <header.hpp>
 
+Json::Json() {}
 
 Json::Json(const std::string &s) {
     size_t i = 0;

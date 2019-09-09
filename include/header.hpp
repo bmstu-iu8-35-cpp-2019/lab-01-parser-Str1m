@@ -17,6 +17,8 @@ private:
     std::vector<std::any> v1;
 
 public:
+    Json();
+
     explicit Json(const std::string& s);
 
     bool is_array() const;

@@ -2,17 +2,17 @@
 
 #include "json.hpp"
 #include <iostream>
-using json = nlohmann::json;
+//using json = nlohmann::json;
 int main() {
-    json j;
+    nlohmann::json j;
     j["ticker"] = {"Si-9.15", "RTS-9.15", "GAZP-9.15"};
     j["id"] = {100024, 100027, 100050};
     j["description"] = {"Futures contract for USD/RUB",
                       "Futures contract for index RTS",
                       "Futures contract for Gazprom shares"};
-    json j1 = json::array();
-    std::vector <json> v1;
-    json obj;
+    nlohmann::json j1 = nlohmann::json::array();
+    std::vector <nlohmann::json> v1;
+    nlohmann::json obj;
     v1.resize(j["ticker"].size());
     for (size_t i = 0; i < j["ticker"].size(); i++){
         v1[i]["id"] = j["id"][i];

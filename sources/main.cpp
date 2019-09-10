@@ -1,3 +1,5 @@
+// Copyright 2019 Sabitov Egor <q.st.stream@gmail.com>
+
 #include "json.hpp"
 #include <iostream>
 using json = nlohmann::json;

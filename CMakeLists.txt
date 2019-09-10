@@ -38,7 +38,7 @@ add_executable(tests
 )
 
 add_executable(main
-  main.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp
 )
 
 target_include_directories(Parser

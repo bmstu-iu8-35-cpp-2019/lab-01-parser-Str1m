@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-files= `| grep -v "./tools/*"`
+files= `grep -v "./tools/*"`
 export GTEST_COLOR=1
 CMAKE_LINKER_OPTS="-DCMAKE_EXE_LINKER='-fuse-ld=gold'"
 CMAKE_CONFIG_OPTS="-DHUNTER_CONFIGURATION_TYPES=Debug -DCMAKE_BUILD_TYPE=Debug"

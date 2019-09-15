@@ -11,6 +11,7 @@ set(
   CACHE STRING "Default cache server"
 )
 
+
 include("tools/gate/cmake/HunterGate.cmake")
 
 huntergate(
@@ -18,6 +19,8 @@ huntergate(
   SHA1 "70287b1ffa810ee4e952052a9adff9b4856d0d54"
 )
 
+hunter_add_package(nlohmann_json)
+find_package(nlohmann_json CONFIG REQUIRED)
 
 project(Parser)
 string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")

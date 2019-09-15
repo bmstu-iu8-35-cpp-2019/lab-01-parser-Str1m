@@ -68,6 +68,7 @@ if(BUILD_COVERAGE)
   find_package(codecov)
 
   add_coverage(Parser)
+  add_coverage(main)
   add_coverage(tests)
   list(APPEND LCOV_REMOVE_PATTERNS "'${PROJECT_SOURCE_DIR}/tests/*'")
   coverage_evaluate()

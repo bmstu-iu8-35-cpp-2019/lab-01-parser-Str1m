@@ -48,9 +48,9 @@ add_executable(main
 target_include_directories(Parser
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-#target_include_directories(main
-#  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/tools
-#)
+target_include_directories(main
+  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
 target_include_directories(tests 
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )

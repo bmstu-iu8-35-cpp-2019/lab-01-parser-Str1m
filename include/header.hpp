@@ -11,6 +11,8 @@
 #include <fstream>
 #include <cmath>
 
+#include <nlohmann/json.hpp>
+
 class Json {
 private:
     std::map<std::string, std::any> m1;

@@ -19,8 +19,6 @@ huntergate(
   SHA1 "70287b1ffa810ee4e952052a9adff9b4856d0d54"
 )
 
-hunter_add_package(nlohmann_json)
-find_package(nlohmann_json CONFIG REQUIRED)
 
 project(Parser)
 string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
@@ -40,16 +38,16 @@ add_executable(tests
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
 )
 
-add_executable(main
-  ${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp
-)
+#add_executable(main
+#  ${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp
+#)
 
 target_include_directories(Parser
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-target_include_directories(main
-  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/tools
-)
+#target_include_directories(main
+#  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/tools
+#)
 target_include_directories(tests 
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )

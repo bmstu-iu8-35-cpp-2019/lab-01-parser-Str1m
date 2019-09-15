@@ -56,7 +56,7 @@ target_include_directories(tests
 )
 
 target_link_libraries(Parser nlohmann_json::nlohmann_json)
-target_link_libraries(tests nlohmann_json::nlohmann_json)
+target_link_libraries(main nlohmann_json::nlohmann_json)
 target_link_libraries(tests GTest::main Parser)
 
 enable_testing()
@@ -68,7 +68,6 @@ if(BUILD_COVERAGE)
   find_package(codecov)
 
   add_coverage(Parser)
-  add_coverage(main)
   add_coverage(tests)
   list(APPEND LCOV_REMOVE_PATTERNS "'${PROJECT_SOURCE_DIR}/tests/*'")
   coverage_evaluate()

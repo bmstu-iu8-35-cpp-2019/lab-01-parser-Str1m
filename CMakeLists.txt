@@ -55,6 +55,8 @@ target_include_directories(tests
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
+target_link_libraries(Parser nlohmann_json::nlohmann_json)
+target_link_libraries(tests nlohmann_json::nlohmann_json)
 target_link_libraries(tests GTest::main Parser)
 
 enable_testing()

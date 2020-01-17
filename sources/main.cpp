@@ -1,6 +1,7 @@
 // Copyright 2019 Sabitov Egor <q.st.stream@gmail.com>
 
 #include <header.hpp>
+
 //#include "json.hpp"
 //#include <iostream>
 //using json = nlohmann::json;
@@ -9,18 +10,18 @@ int main() {
     j["ticker"] = {"Si-9.15", "RTS-9.15", "GAZP-9.15"};
     j["id"] = {100024, 100027, 100050};
     j["description"] = {"Futures contract for USD/RUB",
-                      "Futures contract for index RTS",
-                      "Futures contract for Gazprom shares"};
+                        "Futures contract for index RTS",
+                        "Futures contract for Gazprom shares"};
     nlohmann::json j1 = nlohmann::json::array();
-    std::vector <nlohmann::json> v1;
+    std::vector<nlohmann::json> v1;
     nlohmann::json obj;
     v1.resize(j["ticker"].size());
-    for (size_t i = 0; i < j["ticker"].size(); i++){
+    for (size_t i = 0; i < j["ticker"].size(); i++) {
         v1[i]["id"] = j["id"][i];
         v1[i]["ticker"] = j["ticker"][i];
         v1[i]["description"] = j["description"][i];
     }
-    for (size_t i = 0; i < 3; i++){
+    for (size_t i = 0; i < 3; i++) {
         j1.push_back(v1[i]);
     }
     std::cout << j1;
